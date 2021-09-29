@@ -1,0 +1,33 @@
+
+  <section id="show-page">
+    <div>Airline: <%= flight.airline %></div>
+
+    <div>Airport: <%= flight.airport %></div>
+
+    <div>FlightNo: <%= flight.flightNo %></div>
+
+    <div>Flight Date: <%= flight.departs %> </div>
+  </section>
+<h1>Please select the destination airport and a date</h1>
+<form action="/flights/<%= flight._id %>" method='POST'>
+<label>Airport:</label>
+<select name="airport" id="airport">
+    <option value="DEN">DEN</option>
+    <option value="ATL">ATL</option>
+    <option value="DFW">DFW</option>
+    <option value="LAX">LAX</option>
+    <option value="SAN">SAN</option>
+</select>
+<br>
+<label>Departs:</label>
+<input type="date" name="arrival" id="arrival" required>
+<button type="submit">Add Destination</button>
+</form> 
+
+<ul>
+<% flight.destination.forEach(d => { %>
+  <li>Aiport: <%= d.airport %> <br>
+  Date: <%= d.arrival %> 
+</li>
+  <% }) %> 
+</ul>

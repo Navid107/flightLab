@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WElcome to Flight Page</title>
+  <h1>Welcome to our App</h1>
+  <a href="/flights/new">Add more flight </a>
+  <br>
+  <br>
+  <br>
+  <div>
+    <h2>FlIGHT LIST</h2>
+    <% flights.forEach(f=>{ %>
+      <h4>
+        <%= f.airline %> airline takes of from
+      </h4>
+      <h4>
+        <%= f.airport %> airport
+      </h4>
+      <a href="/flights/<%= f._id %>">More detail</a>
+      <br>
+      <br>
+      <br>
+      <% }) %>
+
+  </div>
+</head>
+
+<body>
+
+</body>
+
+</html>
